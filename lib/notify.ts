@@ -1,4 +1,4 @@
-import 'rxjs/add/operator/cache';
+//import 'rxjs/add/operator/cache';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/throw';
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +15,7 @@ export class Notify {
     private globalOptions: NotificationOptions[],
     permission$: Observable<boolean>
   ) {
-    this._permission$ = permission$.cache();
+    this._permission$ = permission$.pipe();
   }
 
   requestPermission(): Observable<boolean> {
